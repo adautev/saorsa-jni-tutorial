@@ -1,0 +1,3 @@
+shared-lib/*.o
+shared-lib/*.so
+.vscode
