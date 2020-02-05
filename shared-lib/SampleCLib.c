@@ -48,9 +48,18 @@ JNIEXPORT jstring JNICALL Java_com_saorsa_android_jni_java_JniSamples_getHello
 /*
  * Class:     com_saorsa_android_jni_java_JniSamples
  * Method:    useJavaObject
- * Signature: (Lcom/saorsa/android/jni/java/JavaObject;)V
+ * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_com_saorsa_android_jni_java_JniSamples_useJavaObject
-  (JNIEnv *env, jobject thisObj, jobject javaObject) {
-
+  (JNIEnv *env, jobject thisObj) {
+    jclass thisClass = (*env)->GetObjectClass(env, thisObj);
+    jmethodID sayMethodId = (*env)->GetStaticMethodID(env, thisClass, "say", "(Ljava/lang/String;)V");
+    if(sayMethodId == 0) {
+      printf("Couldn't find method id.");
+      return;
+    }
+    char messageArray[] = "It's such a brutal planet, it's such an ugly world...";
+    jstring message = (*env)->NewStringUTF(env, messageArray);
+    (*env)->CallStaticVoidMethod(env, thisObj, sayMethodId, message);    
+    (*env)->ReleaseStringUTFChars(env, message, messageArray);
   };

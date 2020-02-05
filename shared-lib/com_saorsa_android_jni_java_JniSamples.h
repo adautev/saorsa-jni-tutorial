@@ -34,10 +34,10 @@ JNIEXPORT jstring JNICALL Java_com_saorsa_android_jni_java_JniSamples_getHello
 /*
  * Class:     com_saorsa_android_jni_java_JniSamples
  * Method:    useJavaObject
- * Signature: (Lcom/saorsa/android/jni/java/JavaObject;)V
+ * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_com_saorsa_android_jni_java_JniSamples_useJavaObject
-  (JNIEnv *, jobject, jobject);
+  (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }
