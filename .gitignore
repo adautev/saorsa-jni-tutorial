@@ -2,3 +2,4 @@ shared-lib/*.o
 shared-lib/*.so
 .vscode
 output
+*.log
