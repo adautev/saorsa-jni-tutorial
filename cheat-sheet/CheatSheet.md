@@ -25,7 +25,7 @@ gcc -I "/usr/lib/jvm/java-11-openjdk-amd64/include/linux/" -I "/usr/lib/jvm/java
 gcc -shared -o SampleCLib.so SampleCLib.o
 ```
 ####Copy the shared library in a "system" known location
-`cp SampleCLib.so /usr/java/packages/lib`
+cp SampleCLib.so /usr/java/packages/lib/**lib**SampleCLib.so
 ##Create debug configuration
 ![](debug-configuration.png "Debug configuration")
 
